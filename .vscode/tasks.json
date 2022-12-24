@@ -1,42 +1,45 @@
 {
-	// See https://go.microsoft.com/fwlink/?LinkId=733558
-	// for the documentation about the tasks.json format
-	"version": "2.0.0",
-	"tasks": [
-	  {
-	    "label": "Build disk image",
-	    "type": "shell",
-	    "command": "./build-unix.sh",
-	    "osx":{
-		"command": "./build-osx.sh"
-	    },
-	    "group": "build",
-	    "presentation": {
-	      "reveal": "always",
-	      "panel": "shared"
-	    }
-	  },
-	  {
-		"label": "Run disk image",
-		"type": "shell",
-		"command": "x128",
-		"args": [
-			"-80col",
-			"+sound",
-			"-drive8type", "1571",
-			"-8", "${workspaceFolder}/cpm+128.d71",
-			"-reu",
-			"-reusize", "16384"
-		],
-		"group": "test",
-		"presentation": {
-			"echo": true,
-			"reveal": "silent",
-			"focus": false,
-			"panel": "shared",
-			"showReuseMessage": true,
-			"clear": true
-		}
-	  }
-	]
-      }
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build disk image",
+            "type": "shell",
+            "command": "./build-unix.sh",
+            "osx": {
+                "command": "./build-osx.sh"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Run disk image",
+            "type": "shell",
+            "command": "x128",
+            "args": [
+                "-80col",
+                "+sound",
+                "-drive8type", "1571",
+                "-8", "${workspaceFolder}/cpm+128.d71",
+                "-reu",
+                "-reusize", "16384"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
+        }
+    ]
+}
