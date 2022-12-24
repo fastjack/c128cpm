@@ -15,6 +15,28 @@
 	      "reveal": "always",
 	      "panel": "shared"
 	    }
+	  },
+	  {
+		"label": "Run disk image",
+		"type": "shell",
+		"command": "x128",
+		"args": [
+			"-80col",
+			"+sound",
+			"-drive8type", "1571",
+			"-8", "${workspaceFolder}/cpm+128.d71",
+			"-reu",
+			"-reusize", "16384"
+		],
+		"group": "test",
+		"presentation": {
+			"echo": true,
+			"reveal": "silent",
+			"focus": false,
+			"panel": "shared",
+			"showReuseMessage": true,
+			"clear": true
+		}
 	  }
 	]
       }
