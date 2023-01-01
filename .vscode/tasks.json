@@ -40,6 +40,30 @@
                 "showReuseMessage": true,
                 "clear": true
             }
+        },
+        {
+            "label": "Run disk image (warp)",
+            "type": "shell",
+            "command": "x128",
+            "args": [
+                "-80col",
+                "+sound",
+                "-drive8type", "1571",
+                "-8", "${workspaceFolder}/cpm+128.d71",
+                "-reu",
+                "-reusize", "16384",
+                "-warp"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            }
         }
+
     ]
 }
